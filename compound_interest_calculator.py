@@ -1,45 +1,38 @@
 import time
-i0=1000 #investimento iniziale
-percent=0.025 #percentuale di guadagno giornaliera
-imensile=i0 #*percent+i0
-giorno=1
-print('''
-	
-	Programma che calcola i profitti con la percentuale attesa di profitto nel tempo
+i0=1000  # initial investment
+percent=0.025 # percentage of daily earnings
+imensile=i0 # * percent + i0
+day=1
 
-	''')
+print('\n Program that calculates profits with the expected percentage of profit over time \n')
 	
-def profitto():
-    # x e'investimento iniziale
-    # percent e' la percentuale media di guadagno giornaliero
-    # giorni sono i giorni dell' investimento
-    capitale=int(input('inserisci il capitale iniziale '))
-    percent=float(input("la percentuale ex(8, per un 8% ) di guadagno per ogni unita' di tempo "))
-    giorni=int(input("numero di unita' di tempo "))
-    giorno=1
-    capitaleiniziale=capitale
+def profit():
+    initial_cap=int(input('enter the starting capital'))
+    percent=float(input("the former percentage (8, for 8%) of earnings for each unit of time"))
+    days=int(input("number of time units "))
+    day=1
     percent=percent/100 #inserisco cosi' la percentuale espressa in %
     print('_'*30)
-    visual=input("vuoi visualizzare unita' per unita' ? y/n ")
+    visual=input("you want to display unit by unit ? y/n ")
     if str(visual)=='y' or str(visual)=='Y':
-        print(" capitale  |      unita'  |")
+        print(" capital  |      unit  |")
     else:
         pass
-    while giorno<giorni:
-        capitale+= capitale*percent
-        giorno+=1
+    while day<days:
+        cap += cap *percent
+        day+=1
         if visual=='y' or visual=='Y':
-            print(int(capitale) ,' | ', giorno)
+            print(int(cap) ,' | ', day)
 
     print('_'*30)
-    print('capitale lordo di  ' + str(int(round(capitale))))
-    print('profitto percentuale del ' + str(int(round(capitale/capitaleiniziale*100-100,2))) +' %')
-    print("profitto netto del  " + str(int(round(capitale-capitaleiniziale,0))) +" euro")
+    print('gross capital of  ' + str(int(round(cap))))
+    print('percentage profit of ' + str(int(round(cap/initial_cap*100-100,2))) +' %')
+    print('net profit of  ' + str(int(round(cap-initial_cap,0))) +" $ US Dollars")
     time.sleep(1)
 
 while True:
-    profitto()
-    esci=input('continue? y  /  n   ')
+    profit()
+    do_you_exit=input('continue? y  /  n   ')
     print('_'*60)
-    if esci=='n':
+    if do_you_exit=='n':
         break
