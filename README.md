@@ -1,2 +1,3 @@
-# python_accounting
-accounting tools and scripts written in python3
+# Python Accounting
+
+Accounting tools and scripts written in python3
